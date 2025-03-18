@@ -29,8 +29,7 @@ function displayRamens() {
 
 function handleClick(id) {
     const ramen = ramens.find(r => r.id === id);
+}
     if (!ramen) return;
     
     const ramenDetail = document.getElementById('ramen-detail');
-    
-    // Create HTML for ramen deta
