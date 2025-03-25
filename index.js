@@ -18,7 +18,7 @@ function displayRamens() {
     })
         const img = document.createElement('img');
         img.src = ramen.image;
-        img.alt = ramen.name;
+        img.alt = ramen.image;
         
         ramenItem.appendChild(img);
         
