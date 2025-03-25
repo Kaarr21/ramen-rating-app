@@ -1,27 +1,28 @@
 const ramen= [
-    { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "shoyu.jpg", rating: 5, comment: "Delicious!" },
-    { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "miso.jpg", rating: 4, comment: "Very flavorful!" },
-    { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "tonkotsu.jpg" },
-    { id: 4, name: "Spicy Miso", restaurant: "Hakata", image: "spicy.jpg", rating: 3, comment: "Nice kick!" },
+    { id: 1, name: "Gyukotsu Ramen", restaurant: "Ichiran", image: "gyukotsu.jpg", rating: 5, comment: "Delicious!" },
+    { id: 2, name: "Kojiro Ramen", restaurant: "Menya", image: "kojiro.jpg", rating: 4, comment: "Very flavorful!" },
+    { id: 3, name: "nirvana Ramen", restaurant: "Ramen-ya", image: "nirvana.jpg" , rating:5, comment:"The best!"},
+    { id: 4, name: "Spicy Shoyu", restaurant: "Hakata", image: "shoyu.jpg", rating: 3, comment: "Nice kick!" },
     { id: 5, name: "Naruto Ramen", restaurant: "Naruto", image: "naruto.jpg", rating: 5, comment: "My absolute favorite!" }
 ];
 
 function displayRamens() {
     const ramenMenu = document.getElementById('ramen-menu');
-}
-    
+
+
     ramen.forEach(ramen => {
         const img = document.createElement('img');
         img.src = ramen.image;
         img.alt = ramen.name;
-        images.addEventListener("click", () => handleClick(ramen));
+        img.addEventListener("click", () => handleClick(ramen));
 
-        ramenMenu.appendChild(images);
+        ramenMenu.appendChild(img);
     });
-
+}
 function handleClick(ramen) {
-    const details = document.getElementById("ramen-detail");
-    details.innerHTML = `<h2> ${ramen.name}</h2>
+    const details = document.getElementById("ramen-menu");
+    details.innerHTML = `
+    <h2> ${ramen.name}</h2>
     <h3> ${ramen.restaurant}</h2>
     <img src = "${ramen.image}" alt = "${ramen.name}" >
     <p> Ratings: ${ramen.rating || "Not Rated"}</p>
@@ -49,7 +50,7 @@ function addSubmitListener(){
             comment,
         }
 
-        ramens.push(newRamenEntry);
+        ramen.push(newRamenEntry);
 
         displayRamens();
 
