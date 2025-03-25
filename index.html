@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramen Rater</title>
-     <script src="index.js"></script>
+     
     <link rel="stylesheet" href="style.css">
 </head>
 <br>
@@ -14,17 +14,24 @@
     
     <div id="ramen-menu">
         
-         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/personal-projects/pictures/gyukotsu.jpg" alt="Ramen Image">
-         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/personal-projects/pictures/kojiro.jpg" alt="Ramen Image">
-         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/personal-projects/pictures/naruto.jpg" alt="Ramen Image">
-         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/personal-projects/pictures/nirvana.jpg" alt="Ramen Image">
-         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/personal-projects/pictures/shoyu.jpg" alt="Ramen Image">
+         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/ramen-rating-app/pictures/gyukotsu.jpg" alt="Ramen Image">
+         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/ramen-rating-app/pictures/kojiro.jpg" alt="Ramen Image">
+         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/ramen-rating-app/pictures/naruto.jpg" alt="Ramen Image">
+         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/ramen-rating-app/pictures/nirvana.jpg" alt="Ramen Image">
+         <img id="ramen-image" src="file:///home/karoki/Development/Code/se-prep/phase_1/ramen-rating-app/pictures/shoyu.jpg" alt="Ramen Image">
     </div>
     
     <div id="rating-section">
         <div>Rating: <span id="rating-value">_/10</span></div>
         <div>Comment: ...</div>
     </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <h2>Ramen Menu</h2>
+            <div id="ramen-menu">
+                <!-- Ramen images will be displayed here -->
+            </div>
     
         <h2>Add a New Ramen!</h2>
 <form id="ramen-form">
@@ -53,7 +60,11 @@
         <textarea id="comment" rows="3"></textarea>
     </div>
 
-    <button type="submit" id="create-button">Create</button>
+    <button type="submit" id="submit-button">Submit</button>
 </form>
+<div class = "right-panel">
+   
+</div>
+<script src="index.js"></script>
 </body>
 </html>
