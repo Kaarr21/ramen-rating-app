@@ -8,28 +8,59 @@ const ramen= [
 
 function displayRamens() {
     const ramenMenu = document.getElementById('ramen-menu');
-    ramenMenu.innerHTML = '';
 }
     
     ramen.forEach(ramen => {
-        const ramenItem = document.createElement('div');
-        ramenItem.className = 'ramen-item';
-        ramenItem.dataset.id = ramen.id;
-    })
         const img = document.createElement('img');
         img.src = ramen.image;
-        img.alt = ramen.image;
-        
-        ramenItem.appendChild(img);
-        
-        ramenItem.addEventListener('click', () => handleClick(ramen.id));
-        
-        ramenMenu.appendChild(ramenItem);
-    
+        img.alt = ramen.name;
+        images.addEventListener("click", () => handleClick(ramen));
 
-function handleClick(id) {
-    const ramen = ramen.find(r => r.id === id);
+        ramenMenu.appendChild(images);
+    });
+
+function handleClick(ramen) {
+    const details = document.getElementById("ramen-detail");
+    details.innerHTML = `<h2> ${ramen.name}</h2>
+    <h3> ${ramen.restaurant}</h2>
+    <img src = "${ramen.image}" alt = "${ramen.name}" >
+    <p> Ratings: ${ramen.rating || "Not Rated"}</p>
+    <p> Comment section: ${ramen.comment || "No comments available!"}</p>`;
 }
-    if (!ramen) return;
     
-    const ramenDetail = document.getElementById('ramen-detail');
+function addSubmitListener(){
+    const form = document.getElementById("new-ramen");
+
+    form.addEventListener("submit", (events) => {
+        events.preventDefault()
+
+        const name = events.target.name.value;
+        const restaurant = events.target.restaurant.value;
+        const image = events.target.image.value;
+        const rating = events.target.rating.value;
+        const comment = events.target.comment.value;
+
+        const newRamenEntry = {
+            id: ramen.length + 1,
+            name,
+            restaurant,
+            image,
+            rating: rating ? parseInt(rating) : 0,
+            comment,
+        }
+
+        ramens.push(newRamenEntry);
+
+        displayRamens();
+
+        events.target.reset()
+
+    });
+}
+
+function main (){
+    displayRamens();
+    addSubmitListener();
+}
+
+document.addEventListener("DOMContentLoaded", main);
