@@ -20,7 +20,7 @@ function displayRamens() {
     });
 }
 function handleClick(ramen) {
-    const details = document.getElementById("ramen-menu");
+    const details = document.getElementById("ramen-detail");
     details.innerHTML = `
     <h2> ${ramen.name}</h2>
     <h3> ${ramen.restaurant}</h2>
@@ -30,7 +30,7 @@ function handleClick(ramen) {
 }
     
 function addSubmitListener(){
-    const form = document.getElementById("new-ramen");
+    const form = document.getElementById("ramen-form");
 
     form.addEventListener("submit", (events) => {
         events.preventDefault()
